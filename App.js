@@ -3,9 +3,8 @@ var Outputtext=document.querySelector('#output');
 var Transaltebutton =document.querySelector('.btn-translate')
 
 function clickhandler() {
-    Outputtext.innerHTML="fiojsdfhisdhiofh "+ Inputtext.value;
-    
-};
+Outputtext.innerText="oioiioiooi " +Inputtext.value;    
+console.log("click")
+}
 
-Transaltebutton.addEventListener("click", clickhandler)
-
+Transaltebutton.addEventListener("click", clickhandler);
