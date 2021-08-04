@@ -12,26 +12,28 @@ function getTranslateURL(text) {
 }
 
 function errorhandler(errorhandle) {
-    console.log("Some this went wrong: ", errorhandle)
+    console.log("Some this went wrong: ", errorhandle);
+    alert("Some thing went wrong:" + errorhandle)
+    alert("Please try after some time ")
 }
 
 function clickhandler() {
     // Outputtext.innerText="oioiioiooi " +Inputtext.value;    
-    // console.log("click")
+    console.log(" button click")
 
     var userinputtext = Inputtext.value;
     //Calling server for processing
 
     fetch(getTranslateURL(userinputtext))
-         .then(response => response.json())
-         .then(abc =>                   //console.log(abc.contents.text)) //json was replaced by abc
-         { 
-             var translatedtext= abc.contents.translated;
-             Outputtext.innerText =translatedtext;
-         })
+        .then(response => response.json())
+        .then(abc => //console.log(abc.contents.text)) //json was replaced by abc
+            {
+                var translatedtext = abc.contents.translated;
+                Outputtext.innerText = translatedtext;
+            })
         .catch(errorhandler)
-        // .then(mm => mm.json())
-        // .then(abc => console.log(abc))
+    // .then(mm => mm.json())
+    // .then(abc => console.log(abc))
 
     // .then(function ab(response) {return response.json()
 
@@ -40,3 +42,5 @@ function clickhandler() {
 }
 
 Transaltebutton.addEventListener("click", clickhandler);
+
+console.log(Transaltebutton);
